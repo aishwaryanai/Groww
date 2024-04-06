@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groww</title>
+</head>
+<body>
+    <h1>Welcome to Groww</h1>
+
+    <button onclick="get_company_info()">Get Company Info</button>
+    <button onclick="get_stocks_data()">Get Stocks Data</button>
+    <button onclick="max_net_profit_margin_stock()">Get Profit Margin</button>
+    <button onclick="sorted_stocks_by_market_cap()">Market Capitalization</button>
+
+    <div id="companyInfo"></div>
+    <div id="stocksData"></div>
+
+    <script>
+        function get_company_info() {
+            fetch('/http://127.0.0.1:5000/get_company_info')
+            .then(response => response.json())
+            .then(data => {
+                // Convert JSON data to a string and display in the companyInfo div
+                document.getElementById('companyInfo').innerText = JSON.stringify(data, null, 2);
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        function get_stocks_data() {
+            fetch('/http://127.0.0.1:5000/get_stocks_data')
+            .then(response => response.json())
+            .then(data => {
+                // Convert JSON data to a string and display in the stocksData div
+                document.getElementById('stocksData').innerText = JSON.stringify(data, null, 2);
+            })
+            .catch(error => console.error('Error:', error));
+        }
+        function max_net_profit_margin_stock() {
+            fetch('/http://127.0.0.1:5000/max_net_profit_margin_stock')
+            .then(response => response.json())
+            .then(data => {
+                // Convert JSON data to a string and display in the stocksData div
+                document.getElementById('stocksData').innerText = JSON.stringify(data, null, 2);
+            })
+            .catch(error => console.error('Error:', error));
+        }
+        function sorted_stocks_by_market_cap() {
+            fetch('/http://127.0.0.1:5000/sorted_stocks_by_market_cap')
+            .then(response => response.json())
+            .then(data => {
+                // Convert JSON data to a string and display in the stocksData div
+                document.getElementById('stocksData').innerText = JSON.stringify(data, null, 2);
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
