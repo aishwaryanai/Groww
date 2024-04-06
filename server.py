@@ -5,7 +5,14 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('groww.html')
+    return render_template('groww.html', filters=saved_filters)
+    
+@app.route('/save_filter', methods=['POST'])
+def save_filter():
+    filter_name = request.form['filter_name']
+    filter_value = request.form['filter_value']
+    saved_filters.append((filter_name, filter_value))
+    return redirect(url_for('index'))
 
 @app.route('/max_net_profit_margin_stock', methods=['GET'])
 def max_net_profit_margin_stock():
