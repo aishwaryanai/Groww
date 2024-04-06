@@ -1,6 +1,6 @@
-# Groww Stock Analysis App
+# Groww Stock Screener App
 
-This Flask application fetches data from an API endpoint and provides functionality to find the stock with the maximum net profit margin, market capitalization, volume etc.
+We have developed a web application using Flask wherein the web application fetches data from an API endpoint and provides functionality to find the stock with the maximum net profit margin, market capitalization, volume etc. We've enhanced the user experience in the Groww app by transitioning filters from a vertical layout to a more intuitive horizontal format at the top. This adjustment ensures users easily recall their selected filters. Additionally, we've introduced new filters such as maximum net profit margin, market capitalization, and volume, enriching the stock screening capabilities beyond what was previously available in the Groww platform.  Furthermore, we've introduced a new feature allowing users to save their filters, a functionality not present in the current Groww app. This addition enables users to store and quickly access their preferred filter configurations, enhancing the overall user experience and streamlining the stock screening process.
 
 ## Prerequisites
 
